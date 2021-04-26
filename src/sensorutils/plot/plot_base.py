@@ -1,9 +1,15 @@
 """プロットのベース
 
+```python
 with Figure(n_col, n_row) as fig:
-    fig.plot(CSD(args))
+    ax,_ = subplot_instance.plot(*args, **kwargs)
+```
+を実現する。
 
-Figure() | CSD(args)
+with 構文に
+* enter -> シングルトンの生成
+* exit -> シングルトンの破棄
+を行えばよさそう。
 """
 from typing import Optional
 import matplotlib.pyplot as plt
